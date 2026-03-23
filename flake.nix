@@ -1,4 +1,5 @@
 {
+  # made thanks to this vimjoyer video: https://youtu.be/aNgujRXDTdE
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 

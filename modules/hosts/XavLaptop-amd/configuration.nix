@@ -3,6 +3,7 @@
   flake.nixosModules.LaptopConfiguration = {pkgs, lib, ...}: {
     imports = [
       #self.nixosModules.LaptopConfiguration
+      self.nixosModules.niri
     ];
 
     # Networking
@@ -61,14 +62,29 @@
       # Devtools
       zig
       zls
+      odin
+      ols
+      lua
+      gcc
+      cmake
 
       # Utilities
       git
       wget
       pciutils
       brightnessctl
+      p7zip
 
+      # Libraries
+      libGL
+      vulkan-loader
     ];
+
+    # Graphics
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
     # Unfree Software
     nixpkgs.config.allowUnfree = true;
